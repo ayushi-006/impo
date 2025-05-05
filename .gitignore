@@ -2,3 +2,7 @@ impo/
 .git/
 *.log
 .env
+myenv/
+output_examples/
+notes/
+*.env
