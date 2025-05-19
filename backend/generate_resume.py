@@ -1,62 +1,85 @@
-import os
+import argparse
 import json
-from dotenv import load_dotenv
-from langchain_openai import ChatOpenAI
-# from langchain.prompts import PromptTemplate
-from langchain_core.prompts import PromptTemplate
+from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
-# from langchain.chat_models  import  ChatOpenAI
-from langchain_openai import ChatOpenAI
+from langchain_community.llms import Ollama
+from langchain_core.runnables import chain
 
-from PyPDF2 import PdfReader
-import pandas as pd
-from doc_parser import extract_text_from_pdf
-
-load_dotenv() # Load environment variables from .env file
-openai_api_key = os.getenv("OPENAI_API_KEY") # Get OpenAI API key from .env file
-
-#LANGCHAIN
-# from langchain.chat_models  import  ChatOpenAI
+def load_txt_file(filepath):
+    with open(filepath, 'r', encoding='utf-8') as file:
+        return file.read()
 
 
-# once we get the real text we need to structure it in a way that we can use it to generate the resume according to the JD, this is where AI and langchain comes in
+def generate_tailored_resume(resume_data, job_description):
+    prompt = PromptTemplate(
+        input_variables=[
+            "job_description", "full_name", "summary_or_objective", "skills", "experience",
+            "projects", "education", "certifications", "awards_and_achievements",
+            "languages", "interests", "references"
+        ],
+         template="""
+                You are a professional resume optimizer. Your task is to tailor the resume to the job description below.
+                
+                Job Description:
+                {job_description}
+                
+                Candidate Details:
+                Full Name: {full_name}
+                Summary/Objective: {summary_or_objective}
+                Skills: {skills}
+                Experience: {experience}
+                Projects: {projects}
+                Education: {education}
+                Certifications: {certifications}
+                Awards & Achievements: {awards_and_achievements}
+                Languages: {languages}
+                Interests: {interests}
+                References: {references}
+                
+                Please generate a professional resume in **Markdown** format. Ensure it is tailored to the job description, emphasizes the most relevant skills and experience, and is concise, structured, and impactful.
+                 """
+    )
 
-#Generate structured output using langchain _OpenAI ✨
+    llm = Ollama(model="gemma3", temperature=0)
+    # chain = LLMChain(llm=llm, prompt=prompt)
+    runnable = prompt | llm
 
-def generate_structured_output(resume_text):
-    template = PromptTemplate(
-        input_variables=["resume_text"],
-        template="""
-        You are a resume parser. Your task is to extract the following information from the resume text provided.
-        The output should be in JSON format. The keys should be the following:
-        - name
-        - email
-        - phone
-        - skills
-        - experience
-        - education
-        - projects
-        - languages
-        - certifications
-        - references
-        - summary
-    
-        Resume text: {resume_text}
-        """
-)
+    return runnable.invoke({
+        "job_description": job_description,
+        "full_name": resume_data.get("full_name", ""),
+        "summary_or_objective": resume_data.get("summary_or_objective", ""),
+        "skills": resume_data.get("skills", ""),
+        "experience": resume_data.get("work_experience", ""),
+        "projects": resume_data.get("projects", ""),
+        "education": resume_data.get("education", ""),
+        "certifications": resume_data.get("certifications", ""),
+        "awards_and_achievements": resume_data.get("awards_and_achievements", "position_of responsibility"),
+        "languages": resume_data.get("languages", ""),
+        "interests": resume_data.get("interests", ""),
+        "references": resume_data.get("references", "")
+    })
 
-    llm = ChatOpenAI(api_key=openai_api_key, model_name="gpt-3.5-turbo", temperature=0, max_tokens=2000)
-    chain = LLMChain(llm = llm ,  prompt=template)     
-    structured_response = chain.invoke({"resume_text":resume_text})                                                       
-    return structured_response.replace("```", "").replace("json", "")
 
 if __name__ == "__main__":
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-    pdf_path = os.path.join(current_dir, "resume.pdf")
-    resume_text = extract_text_from_pdf(pdf_path)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--resume_txt", required=True, help="impo\resume_data.txt")
+    parser.add_argument("--jd_txt", required=True, help="impo\backend\jd.txt")
+    parser.add_argument("--output_txt", required=False, default="tailored_resume.txt", help="Path to output tailored resume .txt file")
+    args = parser.parse_args()
 
-    structured_response = generate_structured_output(resume_text)
+    # Load inputs
+    resume_json = load_txt_file(args.resume_txt)
+    resume_data = json.loads(resume_json)
+    job_description = load_txt_file(args.jd_txt)
 
+    # Generate tailored resume
+    tailored_resume = generate_tailored_resume(resume_data, job_description)
 
-print(structured_response)
+    print("\n===== Tailored Resume (Markdown) =====\n")
+    # print(tailored_resume)
 
+    output_file = args.output_txt
+    with open(output_file, "w", encoding="utf=8") as f:
+        f.write(tailored_resume)
+
+    print(f"\nTailored resume saved to {output_file}\n")

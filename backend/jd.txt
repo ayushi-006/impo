@@ -1,0 +1,59 @@
+Job Title: Machine Learning Intern
+Location: [Insert Location or Remote]
+Duration: [e.g., 3-6 months]
+Start Date: [Insert Date]
+Stipend: [Optional – Mention if applicable]
+Department: Data Science / AI & ML
+Reporting To: Senior Machine Learning Engineer / Data Scientist
+
+About the Role:
+We are looking for a passionate and motivated Machine Learning Intern to join our team. You will work on real-world projects that involve data preprocessing, model development, evaluation, and deployment. This is a great opportunity to gain hands-on experience in machine learning and contribute to impactful solutions while working alongside experienced data scientists and engineers.
+
+Key Responsibilities:
+Assist in collecting, cleaning, and preprocessing large datasets.
+
+Implement and optimize machine learning models for various use cases.
+
+Conduct exploratory data analysis (EDA) and feature engineering.
+
+Evaluate model performance using appropriate metrics and validation techniques.
+
+Document methodologies, processes, and findings clearly and accurately.
+
+Collaborate with cross-functional teams including software engineers, product managers, and domain experts.
+
+Stay up to date with the latest ML/AI research and best practices.
+
+Required Qualifications:
+Currently pursuing or recently completed a degree in Computer Science, Data Science, Engineering, Mathematics, or a related field.
+
+Strong understanding of machine learning concepts and algorithms (e.g., regression, classification, clustering, etc.).
+
+Proficient in Python and ML libraries such as Scikit-learn, TensorFlow, PyTorch, or similar.
+
+Experience with data manipulation using Pandas, NumPy, etc.
+
+Knowledge of model evaluation metrics (e.g., precision, recall, F1-score, ROC-AUC).
+
+Familiarity with version control tools like Git.
+
+Preferred Skills (Good to Have):
+Experience with NLP, computer vision, or time-series data.
+
+Exposure to cloud platforms (AWS, GCP, Azure) and ML pipelines.
+
+Familiarity with tools like Jupyter Notebooks, MLFlow, or Docker.
+
+Participation in relevant competitions (e.g., Kaggle) or open-source contributions.
+
+What You’ll Gain:
+Practical exposure to real-world machine learning workflows and tools.
+
+Mentorship from experienced professionals in the AI/ML domain.
+
+Opportunity to work on impactful, high-visibility projects.
+
+A certificate and letter of recommendation upon successful completion.
+
+To Apply:
+Submit your resume, GitHub profile (if any), and a brief statement of interest to [email/contact].
