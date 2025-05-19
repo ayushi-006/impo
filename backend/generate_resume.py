@@ -10,7 +10,7 @@ def load_txt_file(filepath):
         return file.read()
 
 
-def generate_tailored_resume(resume_data, job_description):
+def generate_tailored_resume(resume_data, job_description, profile_link=" "):
     prompt = PromptTemplate(
         input_variables=[
             "job_description", "full_name", "summary_or_objective", "skills", "experience",
@@ -65,6 +65,7 @@ if __name__ == "__main__":
     parser.add_argument("--resume_txt", required=True, help="impo\resume_data.txt")
     parser.add_argument("--jd_txt", required=True, help="impo\backend\jd.txt")
     parser.add_argument("--output_txt", required=False, default="tailored_resume.txt", help="Path to output tailored resume .txt file")
+    parser.add_argument("--profile_link", required=False, default="", help="Profile link for the candidate")
     args = parser.parse_args()
 
     # Load inputs
@@ -73,7 +74,7 @@ if __name__ == "__main__":
     job_description = load_txt_file(args.jd_txt)
 
     # Generate tailored resume
-    tailored_resume = generate_tailored_resume(resume_data, job_description)
+    tailored_resume = generate_tailored_resume(resume_data, job_description, args.profile_link)
 
     print("\n===== Tailored Resume (Markdown) =====\n")
     # print(tailored_resume)

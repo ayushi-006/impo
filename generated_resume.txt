@@ -1,0 +1,91 @@
+Okay, here's a Markdown resume based on the provided information, tailored for a software development or DevOps role, emphasizing relevant skills and experience.  I've focused on clarity, conciseness, and impact.
+
+```markdown
+# Aayush Somani
+
+**Contact:** aayush.somani@email.com | +91 9919303460 | [LinkedIn Profile URL (Replace with actual URL)]
+
+---
+
+**Summary**
+
+Highly motivated and results-oriented IT professional with a strong foundation in software development, DevOps principles, and cloud technologies.  Proven ability to design, develop, and deploy applications, coupled with experience in automation, cloud infrastructure, and data analysis.  Seeking a challenging role where I can leverage my skills to contribute to innovative projects and drive operational efficiency.
+
+---
+
+**Skills**
+
+* **Programming Languages:** Python, Java, C
+* **Cloud Technologies:** AWS (EC2, S3, Docker), Azure (Fundamentals), GCP (Fundamentals)
+* **DevOps Tools:** Docker, Jenkins, Git, Kubernetes (Fundamentals)
+* **Data Analysis & Machine Learning:**  Sentiment Analysis (VADER), Regression Models, Data Analysis
+* **Operating Systems:** Windows, Linux
+* **Databases:** SQL, MongoDB
+* **Other:** Agile Methodologies, Version Control, Automation, Troubleshooting
+
+---
+
+**Experience**
+
+**Google Singapore | Interim Consultant via Smollan** | November 2021 – May 2022
+
+* Developed and deployed a sentiment analysis model using VADER to analyze retailer brand prominence, resulting in [Quantifiable Result - e.g., improved data insights, reduced analysis time].
+* Automated data scraping from multiple retailer websites using Python and Selenium.
+* Designed and implemented Docker containers for application deployment, improving portability and scalability.
+* Contributed to the design and implementation of CI/CD pipelines.
+
+**Salesforce | Virtual Internship** | May 2023 – Present
+
+* Configured and deployed Salesforce applications using hands-on training and project work.
+* Developed and utilized Salesforce reports and dashboards for business insights.
+* Gained experience in Agile development methodologies.
+
+---
+
+**Education**
+
+**Manipal University Jaipur** | Bachelor of Information Technology | November 2020 – May 2024
+* CGPA: 8.83
+* Relevant Coursework: Software Engineering, Database Management, Data Structures and Algorithms, Cloud Computing.
+
+---
+
+**Projects**
+
+* **Real Estate Price Prediction:** Developed a regression model using Python and TensorFlow to predict real estate prices based on various factors (BHK, proximity to locations).  [Briefly describe the model and key findings - e.g., "Achieved X% accuracy"].
+* **[Add another project if applicable -  Brief description]**
+
+---
+
+**Awards & Achievements**
+
+* Best Chapter – MUJ ACM Chapter (India & Global) – Recognized for outstanding leadership and chapter growth.
+* CGPA: 8.83 – Manipal University Jaipur
+
+---
+
+**Interests**
+
+* [List 2-3 relevant interests - e.g., Open Source, Cloud Computing, Data Science]
+
+---
+
+**References**
+
+Available upon request.
+```
+
+**Key Improvements & Considerations:**
+
+* **Quantifiable Results:**  I've added placeholders for quantifiable results (e.g., "Achieved X% accuracy").  *Crucially*, you *must* replace these with actual metrics from your projects.  This is what makes a resume impactful.
+* **Tailoring:** This is a *template*.  You *must* tailor it to the specific job description.  If the job emphasizes Kubernetes, add more detail about your Kubernetes experience.  If it emphasizes data analysis, highlight your data analysis projects.
+* **Conciseness:**  I've kept it concise.  Recruiters spend very little time initially scanning resumes.
+* **Action Verbs:**  I've used strong action verbs (Developed, Implemented, Designed, Contributed).
+* **Formatting:**  Markdown is used for basic formatting.  You can adjust the spacing and font sizes as needed.
+* **LinkedIn URL:**  Replace "[LinkedIn Profile URL (Replace with actual URL)]" with your actual LinkedIn profile URL.
+
+To help me further refine this resume, could you tell me:
+
+*   What is the specific job you're applying for? (e.g., DevOps Engineer, Data Scientist, Software Developer)
+*   Can you provide more details about the projects you've worked on (e.g., specific technologies used, key achievements)?
+*   Are there any specific skills or technologies that the job description emphasizes that you want to highlight?
