@@ -1,91 +1,67 @@
-Okay, here's a Markdown resume based on the provided information, tailored for a software development or DevOps role, emphasizing relevant skills and experience.  I've focused on clarity, conciseness, and impact.
+Here is a professionally optimized resume for Aayush Somani:
 
 ```markdown
-# Aayush Somani
+Aayush Somani
+Contact Information:
+Email: [aayush.somani934@gmail.com](mailto:aayush.somani934@gmail.com)
+Phone: +91 9919303460, +91 7905749263
+LinkedIn: (insert LinkedIn profile link)
 
-**Contact:** aayush.somani@email.com | +91 9919303460 | [LinkedIn Profile URL (Replace with actual URL)]
+Summary:
+Highly motivated and detail-oriented IT professional with a strong foundation in programming languages such as Java, Python, C, Flutter, and Dart. Proficient in cloud platforms like AWS, Azure, GCP, and Salesforce. Possesses expertise in data analysis, machine learning, and DevOps practices.
 
----
+Education:
 
-**Summary**
+* Bachelor's in Information Technology, Manipal University Jaipur (November 2020 - May 2024)
 
-Highly motivated and results-oriented IT professional with a strong foundation in software development, DevOps principles, and cloud technologies.  Proven ability to design, develop, and deploy applications, coupled with experience in automation, cloud infrastructure, and data analysis.  Seeking a challenging role where I can leverage my skills to contribute to innovative projects and drive operational efficiency.
+Work Experience:
+Google Singapore | Interim Consultant via Smollan, India
+Remote | November 2021 – May 2022
 
----
+* Worked on a project that judged the “brand prominence” of 15 different products by Google and its competitors.
+* Automated regular data scraping from 12 different retailer websites using Python (Selenium).
+* Deployed a VADER model for sentiment analysis with a polarity score. Implemented regression to train the model. Hosted the model in a Docker container on Google Cloud.
+* Was responsible for DevOps in GCP and pipelines under Heroku.
 
-**Skills**
+SALESFORCE Virtual Internship | Salesforce Admin Trainee
+Remote | May 2023 - current
 
-* **Programming Languages:** Python, Java, C
-* **Cloud Technologies:** AWS (EC2, S3, Docker), Azure (Fundamentals), GCP (Fundamentals)
-* **DevOps Tools:** Docker, Jenkins, Git, Kubernetes (Fundamentals)
-* **Data Analysis & Machine Learning:**  Sentiment Analysis (VADER), Regression Models, Data Analysis
-* **Operating Systems:** Windows, Linux
-* **Databases:** SQL, MongoDB
-* **Other:** Agile Methodologies, Version Control, Automation, Troubleshooting
+* Configured and deployed apps on the Salesforce platform.
+* Finished the Salesforce Admin trailmix which contained 30 modules with hands-on projects.
+* Built a guided project on the platform which earned me a specialization in Business Administration, Lighting Experience, Security, reports, and Dashboards.
 
----
+Projects:
+Real Estate Price Prediction
+	+ Implemented a Regression model to predict the price of real estate of a certain demographic keeping in consideration certain factors like BHK and proximity to certain locations.
+	+ Created containers with the help of Docker to deploy the application on Google Cloud.
 
-**Experience**
+Email Spam classifier based on Email Sentiments
+	+ Worked on analyzing the sentiments of a dataset of emails using the BERT model. Trained the model using regression.
+	+ Based on polarity score of the email subjects and contents, classified email as SPAM or HAM, after training on a labelled dataset. The model gave an accuracy of 88 percent.
 
-**Google Singapore | Interim Consultant via Smollan** | November 2021 – May 2022
+CI/CD pipelining in Microsoft Azure
+	+ Successfully deployed an application from Visual Studio Desktop to Azure Web Apps, gaining hands-on experience in the deployment process.
+	+ Developed a strong understanding of DevOps principles, pipeline scripting, and CI/CD practices in Azure.
 
-* Developed and deployed a sentiment analysis model using VADER to analyze retailer brand prominence, resulting in [Quantifiable Result - e.g., improved data insights, reduced analysis time].
-* Automated data scraping from multiple retailer websites using Python and Selenium.
-* Designed and implemented Docker containers for application deployment, improving portability and scalability.
-* Contributed to the design and implementation of CI/CD pipelines.
+Certifications:
+* Microsoft Certified Azure Fundamentals (AZ-900) - Microsoft
+* Microsoft Certified Azure AI Fundamentals (AI-900)- Microsoft
+* Microsoft Certified Azure Data Fundamentals (DP-900) - Microsoft
+* AWS Academy Graduate: AWS Cloud Foundations - AWS Academy
+* DevOps on AWS- Coursera- AWS
 
-**Salesforce | Virtual Internship** | May 2023 – Present
+Position of Responsibility:
+MUJ-ACM Student Chapter
+	+ Treasurer and Public Relations Head of the largest ACM chapter in India with more than 1000 members.
+	+ Awarded the “Best Chapter” and “Outstanding Chapter Activities” award in India, and the Global award for “Highest count of Memberships”.
+	+ Handled over 2.5 lakhs rupees as part of the finances of the chapter.
+	+ Organized 100+ Techno-Cultural Events and CSR activities which were recognized globally.
 
-* Configured and deployed Salesforce applications using hands-on training and project work.
-* Developed and utilized Salesforce reports and dashboards for business insights.
-* Gained experience in Agile development methodologies.
+Cloud and Java Mentor
+	+ Organized workshops for the AWS Cloud platform and taught and mentored more than 170 students on Cloud Computing. Also covered foundational Java with the concepts of OOPs and data structures.
 
----
-
-**Education**
-
-**Manipal University Jaipur** | Bachelor of Information Technology | November 2020 – May 2024
-* CGPA: 8.83
-* Relevant Coursework: Software Engineering, Database Management, Data Structures and Algorithms, Cloud Computing.
-
----
-
-**Projects**
-
-* **Real Estate Price Prediction:** Developed a regression model using Python and TensorFlow to predict real estate prices based on various factors (BHK, proximity to locations).  [Briefly describe the model and key findings - e.g., "Achieved X% accuracy"].
-* **[Add another project if applicable -  Brief description]**
-
----
-
-**Awards & Achievements**
-
-* Best Chapter – MUJ ACM Chapter (India & Global) – Recognized for outstanding leadership and chapter growth.
-* CGPA: 8.83 – Manipal University Jaipur
-
----
-
-**Interests**
-
-* [List 2-3 relevant interests - e.g., Open Source, Cloud Computing, Data Science]
-
----
-
-**References**
-
-Available upon request.
+DonateKart Volunteer
+	+ Organized a donation drive in our college to raise funds for COVID affected people and raised more than Rs 30,000.
 ```
 
-**Key Improvements & Considerations:**
-
-* **Quantifiable Results:**  I've added placeholders for quantifiable results (e.g., "Achieved X% accuracy").  *Crucially*, you *must* replace these with actual metrics from your projects.  This is what makes a resume impactful.
-* **Tailoring:** This is a *template*.  You *must* tailor it to the specific job description.  If the job emphasizes Kubernetes, add more detail about your Kubernetes experience.  If it emphasizes data analysis, highlight your data analysis projects.
-* **Conciseness:**  I've kept it concise.  Recruiters spend very little time initially scanning resumes.
-* **Action Verbs:**  I've used strong action verbs (Developed, Implemented, Designed, Contributed).
-* **Formatting:**  Markdown is used for basic formatting.  You can adjust the spacing and font sizes as needed.
-* **LinkedIn URL:**  Replace "[LinkedIn Profile URL (Replace with actual URL)]" with your actual LinkedIn profile URL.
-
-To help me further refine this resume, could you tell me:
-
-*   What is the specific job you're applying for? (e.g., DevOps Engineer, Data Scientist, Software Developer)
-*   Can you provide more details about the projects you've worked on (e.g., specific technologies used, key achievements)?
-*   Are there any specific skills or technologies that the job description emphasizes that you want to highlight?
+This optimized resume focuses on highlighting Aayush's relevant skills and experience, particularly in cloud platforms, programming languages, and DevOps practices. It also emphasizes his achievements and certifications, making it an effective tool for attracting the attention of hiring managers and applicant tracking systems (ATS).

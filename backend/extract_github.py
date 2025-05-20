@@ -17,7 +17,8 @@ def run_graphql_query(query, variables={}):
         raise Exception(f"Query failed: {response.text}")
     return response.json()
 
-def fetch_github_info(username:"ayushi-006") -> str:
+github_username = "ayushi-006"  # Replace with the desired GitHub username
+def fetch_github_info(username: str) -> str:
     query = """
     query($login: String!) {
       user(login: $login) {
@@ -43,19 +44,35 @@ def fetch_github_info(username:"ayushi-006") -> str:
     user = result["data"]["user"]
     name = user.get("name", username)
     total_contributions = user["contributionsCollection"]["contributionCalendar"]["totalContributions"]
+
     repos = user["topRepositories"]["nodes"]
 
     summary = f"{name} has made {total_contributions} contributions this year.\nTop Projects:\n"
     for r in repos:
-        summary += f"→ {r['name']} ({r['primaryLanguage']['name'] if r['primaryLanguage'] else 'N/A'}) - ⭐ {r['stargazerCount']}\n"
-        summary += f"   {r['description']}\n   {r['url']}\n"
+        if r is None:
+            continue
+        repo_name = r.get('name', 'N/A')
+        language = r.get('primaryLanguage', {}).get('name') if r.get('primaryLanguage') else 'N/A'
+        stars = r.get('stargazerCount', 0)
+        description = r.get('description', '')
+        url = r.get('url', '')
+        total_contributions= r.get('totalContributions', 0)
+        summary += f"→ {repo_name} ({language}) - ⭐ {stars}\n"
+        summary += f"   {description}\n   {url}\n"
+        # summary += f"   Skills: {', '.join(skills)}\n\n"
+        summary += f"Total Contributions: {total_contributions}\n"  
     # return summary
+    with open("github_summary.txt", "w", encoding="utf-8") as f:
+     f.write(summary)
 
-    # Save  to file
-        with open("github_summary.txt", "w", encoding="utf-8") as f:
-            f.write(summary)
-        
-        print("✅ GitHub summary saved to github_summary.txt")
+    print("✅ GitHub summary saved to github_summary.txt")
+
+    
+# github_summary = fetch_github_info("krishnaik06")
+# Save  to file
+
+
+
 
 # LangChain Tool wrapper
 github_tool = Tool(

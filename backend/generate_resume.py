@@ -4,6 +4,21 @@ from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 from langchain_community.llms import Ollama
 from langchain_core.runnables import chain
+from extract_github import fetch_github_info, github_username
+
+
+# github_username = resume_data.get("github_username", "") or args.profile_link.split("/")[-1]
+
+# github_summary = fetch_github_info(github_username)
+
+def load_github_summary(filepath="github_summary.txt"):
+    try:
+        with open(filepath, "r", encoding="utf-8") as f:
+            return f.read()
+    except FileNotFoundError:
+        return "No GitHub summary available."
+    
+github_summary = load_github_summary()
 
 def load_txt_file(filepath):
     with open(filepath, 'r', encoding='utf-8') as file:
@@ -14,12 +29,15 @@ def generate_tailored_resume(resume_data, job_description, profile_link=" "):
     prompt = PromptTemplate(
         input_variables=[
             "job_description", "full_name", "summary_or_objective", "skills", "experience",
-            "projects", "education", "certifications", "awards_and_achievements",
-            "languages", "interests", "references"
+            "projects", "education", "certifications", "awards_and_achievements","CGPA",
+            "languages", "interests", "references, github_summary"
         ],
          template="""
-                You are a professional resume optimizer. Your task is to tailor the resume to the job description below.
+                You are a professional resume optimizer. Your task is to tailor the resume to the job description below based on the provided resume data and and GitHub contributions.
                 
+                
+                GitHub Contributions:
+                {github_summary}
                 Job Description:
                 {job_description}
                 
@@ -30,28 +48,31 @@ def generate_tailored_resume(resume_data, job_description, profile_link=" "):
                 Experience: {experience}
                 Projects: {projects}
                 Education: {education}
+                CGPA: {cgpa}
                 Certifications: {certifications}
                 Awards & Achievements: {awards_and_achievements}
                 Languages: {languages}
                 Interests: {interests}
                 References: {references}
                 
-                Please generate a professional resume in **Markdown** format. Ensure it is tailored to the job description, emphasizes the most relevant skills and experience, and is concise, structured, and impactful.
+                Please generate a professional resume in **Markdown** format. Return a professional, ATS-friendly resume focusing on alignment between the user's skills and the job description.it should emphasizes the most relevant skills and experience, and is concise, structured, and impactful.
                  """
     )
 
-    llm = Ollama(model="gemma3", temperature=0)
+    llm = Ollama(model="llama3", temperature=0)
     # chain = LLMChain(llm=llm, prompt=prompt)
     runnable = prompt | llm
 
     return runnable.invoke({
         "job_description": job_description,
+        "github_summary": github_summary,
         "full_name": resume_data.get("full_name", ""),
         "summary_or_objective": resume_data.get("summary_or_objective", ""),
         "skills": resume_data.get("skills", ""),
         "experience": resume_data.get("work_experience", ""),
         "projects": resume_data.get("projects", ""),
         "education": resume_data.get("education", ""),
+        "cgpa": resume_data.get("CGPA", ""),
         "certifications": resume_data.get("certifications", ""),
         "awards_and_achievements": resume_data.get("awards_and_achievements", "position_of responsibility"),
         "languages": resume_data.get("languages", ""),

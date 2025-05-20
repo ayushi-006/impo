@@ -1,0 +1,22 @@
+Krish C Naik has made 222 contributions this year.
+Top Projects:
+→ Roadmap-To-Learn-Agentic-AI (N/A) - ⭐ 573
+   None
+   https://github.com/krishnaik06/Roadmap-To-Learn-Agentic-AI
+Total Contributions: 0
+→ Agentic-Ai-Project (Python) - ⭐ 35
+   None
+   https://github.com/krishnaik06/Agentic-Ai-Project
+Total Contributions: 0
+→ MCP-CRASH-Course (Python) - ⭐ 30
+   None
+   https://github.com/krishnaik06/MCP-CRASH-Course
+Total Contributions: 0
+→ appgithubaction (Python) - ⭐ 19
+   None
+   https://github.com/krishnaik06/appgithubaction
+Total Contributions: 0
+→ Complete-Data-Science-With-Machine-Learning-And-NLP-2024 (Jupyter Notebook) - ⭐ 1400
+   None
+   https://github.com/krishnaik06/Complete-Data-Science-With-Machine-Learning-And-NLP-2024
+Total Contributions: 0

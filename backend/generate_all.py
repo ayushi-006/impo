@@ -18,6 +18,20 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
+
+    # Step 0: Parse PDF to resume_data.txt if needed
+    if not os.path.exists(args.resume):
+        print("🔍 Parsing PDF resume...")
+        doc_parser_args = [
+            "--pdf", args.pdf,
+            "--out", args.resume
+        ]
+        run_script("backend/doc_parser.py", doc_parser_args)
+        print(f"📝 Parsed resume data saved to {args.resume}")
+    else:
+        print("✅ Parsed resume data already exists, skipping PDF parsing.")
+
+
     # Step 1: Generate Resume
     print("🚀 Generating Tailored Resume...")
     resume_args = [
